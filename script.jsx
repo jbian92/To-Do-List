@@ -6,37 +6,34 @@ const List = () => {
   const [list, setList]= useState([])
   const [item, setItem]= useState("")
   
-  useEffect(() => {
-    const timerID = setInterval(() => {
-      setDate(new Date())
-    }, 1000)
+  // track state of input field
+  function handleChange() {
+    setItem(event.target.value);
+  }
+ 
+  // add item to list
+  function handleAdd() {
+    // create a new list based on the old list and the new item
+    const newList = list.concat({ item });
+    setList(newList);
 
-    return () => clearInterval(timerID)
-  }, [])
-
-  const handleSubmit = (evt) => {
-      evt.preventDefault();
-      alert(`Submitting Item ${item}`)
+    setItem("") // reset input field
   }
 
   return (
     <div className="list">
       <h1>To-Do List</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Enter To-Do Item: 
-          <input
-            type="text"
-            value={item}
-            onChange={e => setItem(e.target.value)}
-          />
-        </label>
-        <input type="submit" value="Add" />
-      </form>
+      <div>
+        <label htmlFor="item">Enter To-Do Item: </label>
+        <input id="item" type="text" value={item} onChange={handleChange} />
+        <button type="button" onClick={handleAdd}>
+          Add
+        </button>
+      </div>
 
       {
-        list.map(item => <p key={item}>{item}</p>)
+        list.map(todo => <p key={todo}>{todo}</p>)
       }
     </div>
   )
