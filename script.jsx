@@ -35,7 +35,7 @@ const List = () => {
   }
 
   return (
-    <div>
+    <div className="to-do">
       <div className="input">
         <h1>To-Do List</h1> 
 
@@ -48,6 +48,7 @@ const List = () => {
       
       <div className="list">
         {list.map((taskInput, index) => (
+          <div className="item">
           <label className="check" key={index}>
             <input 
               type="checkbox"
@@ -56,6 +57,7 @@ const List = () => {
             />
             <span>{taskInput.taskName}</span>
           </label>
+          </div>
         ))}
       </div>
 

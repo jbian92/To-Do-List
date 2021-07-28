@@ -1,6 +1,21 @@
+.to-do {
+  margin: 5%;
+}
+
 .input {
   text-align: center;
   color: #040404; 
+  margin: 3%;
+}
+
+.item {
+  border-color: #13505B;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  background-color: rgb(199, 247, 224);
+  padding: 0.2rem;
+  margin: 5px; /* space between each item in list */
 }
 
 .check {
@@ -11,7 +26,7 @@
 
 .check > span {
   color: #040404;
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem;
 }
 
 .check > input {
@@ -21,27 +36,28 @@
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid #13505B;
+  border: 1.5px solid #13505B;
   border-radius: 4px;
   outline: none;
   transition-duration: 0.3s;
-  background-color: #A4C2A8;
+  background-color: #0C7489;
   cursor: pointer;
 }
 
 .check > input:checked {
   border: 1px solid #13505B;
-  background-color: #0C7489;
+  background-color: rgb(14, 153, 180);
 }
 
+/* checkmark */
 .check > input:checked + span::before {
   content: '\2713';
   display: block;
   text-align: center;
   color: #FFF3B0;
   position: absolute;
-  left: 0.7rem;
-  top: 0.2rem;
+  left: 0.6rem;
+  top: 0.4rem;
 }
 
 .check > input:active {
