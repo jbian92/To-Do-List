@@ -1,24 +1,11 @@
 // import React hooks 
 const { useState } = React
 
-const Checkbox = ({ label, value, onChange }) => {
-  return (
-    <label>
-      <input 
-        type="checkbox" 
-        checked={value}
-        onChange={onChange}
-      />
-      {label}
-    </label>
-  )
-}
-
 const List = () => {
   // hook used to create a state variable and its updater function that updates the state
   const [list, setList] = useState([])
   const [taskInput, setTaskInput] = useState("")
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState([])
   
   // track state of input field
   function handleChange() {
@@ -39,8 +26,12 @@ const List = () => {
   }
 
   // change completion status of a task
-  function handleCheck() {
-    setChecked(!checked)
+  const handleCheck = (position) => {
+    const updatedChecked = checked.map((condition, index) =>
+      index === position ? !condition : condition
+    )
+
+    setChecked(updatedChecked)
   }
 
   return (
@@ -58,12 +49,12 @@ const List = () => {
       <div className="list">
         {list.map((taskInput, index) => (
           <div className="check" key={index}>
-            <Checkbox 
-              label={taskInput.taskName} 
-              value={checked}
-              onChange={handleCheck}
+            <input 
+              type="checkbox"
+              checked={checked[index]}
+              onChange={() => handleCheck(index)}
             />
-
+            {taskInput.taskName} 
           </div>
         ))}
       </div>
