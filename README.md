@@ -2,6 +2,7 @@
 This is a simple "To-Do List" application in React built during Execute Big's Tech Roulette Week 4. 
 
 ## Demo
+![demo gif](demo.gif)
 
 ## Challenges Faced
 ### Displaying the Added To-Do Tasks
