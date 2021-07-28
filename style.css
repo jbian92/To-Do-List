@@ -62,6 +62,7 @@
 
 .check > input:checked + span {
   text-decoration: line-through;
+  color: gray;
 }
 
 .check > input:active {

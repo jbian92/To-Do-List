@@ -41,7 +41,7 @@ const List = () => {
 
         <label htmlFor="item">Enter To-Do Item: </label>
         <input id="item" type="text" value={taskInput} onChange={handleChange} />
-        <button type="button" onClick={handleAdd}>
+        <button type="button add" onClick={handleAdd}>
           Add
         </button>
       </div>
