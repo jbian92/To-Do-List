@@ -1,3 +1,49 @@
 .input {
   text-align: center;
+  color: #040404; 
+}
+
+.check {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.check > span {
+  color: #040404;
+  padding: 0.5rem 0.25rem;
+}
+
+.check > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #13505B;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #A4C2A8;
+  cursor: pointer;
+}
+
+.check > input:checked {
+  border: 1px solid #13505B;
+  background-color: #0C7489;
+}
+
+.check > input:checked + span::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  color: #FFF3B0;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.2rem;
+}
+
+.check > input:active {
+  border: 2px solid #13505B;
 }

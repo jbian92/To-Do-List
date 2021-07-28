@@ -1,4 +1,4 @@
-// import React hooks 
+// import React hook 
 const { useState } = React
 
 const List = () => {
@@ -48,14 +48,14 @@ const List = () => {
       
       <div className="list">
         {list.map((taskInput, index) => (
-          <div className="check" key={index}>
+          <label className="check" key={index}>
             <input 
               type="checkbox"
               checked={checked[index]}
               onChange={() => handleCheck(index)}
             />
-            {taskInput.taskName} 
-          </div>
+            <span>{taskInput.taskName}</span>
+          </label>
         ))}
       </div>
 
