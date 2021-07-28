@@ -60,6 +60,10 @@
   top: 0.4rem;
 }
 
+.check > input:checked + span {
+  text-decoration: line-through;
+}
+
 .check > input:active {
   border: 2px solid #13505B;
 }
