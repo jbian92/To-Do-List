@@ -4,40 +4,49 @@ const { useEffect, useState } = React
 const List = () => {
   // hook used to create a state variable and its updater function that updates the state
   const [list, setList]= useState([])
-  const [item, setItem]= useState("")
+  const [itemInput, setItemInput]= useState("")
   
   // track state of input field
   function handleChange() {
-    setItem(event.target.value);
+    setItemInput(event.target.value);
   }
  
   // add item to list
   function handleAdd() {
     // create a new list based on the old list and the new item
-    const newList = list.concat({ item });
+    
+    const newItem = {
+      itemName: itemInput,
+      // isSelected: false,
+    };
+    
+    const newList = list.concat(newItem);
     setList(newList);
 
-    setItem("") // reset input field
+    setItemInput("") // reset input field
   }
 
   return (
-    <div className="list">
-      <h1>To-Do List</h1>
+    <div>
+      <div className="input">
+        <h1>To-Do List</h1> 
 
-      <div>
         <label htmlFor="item">Enter To-Do Item: </label>
-        <input id="item" type="text" value={item} onChange={handleChange} />
+        <input id="item" type="text" value={itemInput} onChange={handleChange} />
         <button type="button" onClick={handleAdd}>
           Add
         </button>
       </div>
+      
+      <div className="list">
+        {
+          list.map((itemInput, index) =>
+            <li key={index}>{itemInput.itemName}</li>)
+        }
+      </div>
 
-      {
-        list.map(todo => <p key={todo}>{todo}</p>)
-      }
     </div>
   )
-
 
 }
 
