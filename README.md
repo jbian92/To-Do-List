@@ -40,5 +40,5 @@ This is a simple "To-Do List" application in React built during Execute Big's Te
   By using the index of each task in the state variable **list** as the index in **checked**, I was able to create multiple checkboxes and have them working as independent checkboxes. 
 
 ## Execute Big's Tech Roulette Week 4
-- Learned the basic concepts and fundamental ideas of React and JSX.
-- Used the React documentation and related resources to build a to-do list. 
+- Learned the basic concepts and fundamental ideas of React and JSX
+- Used the React documentation and related resources to build a to-do list 
