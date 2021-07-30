@@ -1,7 +1,7 @@
 # To-Do List
 This is a simple "To-Do List" application in React built during Execute Big's Tech Roulette Week 4. 
 
-## Demo
+## Demo: https://jbian92.github.io/To-Do-List/ 
 ![demo gif](demo.gif)
 
 ## Challenges Faced
